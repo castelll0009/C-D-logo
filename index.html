@@ -1,48 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Cat Animation</title>
-    <style>
-        body { color: #606365; display: flex; align-items: center; height: 100vh; margin: 0; flex-direction: column; justify-content: center; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; } .cat { font-size: 3rem; text-align: center;
-      font-family: serif;
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Cat Animation</title>
+  <style>
+      body { color: #606365; display: flex; align-items: center; height: 100vh; margin: 0; flex-direction: column; justify-content: center; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; } .cat { font-size: 3rem; text-align: center;
+    font-family: serif;
 } 
 .ear-line { font-weight: 600; display: flex; justify-content: space-between; font-size: 2rem; margin-bottom: -38px; translate : 0px -1px;
 } 
 .face-line { 
-      font-size: 2.5rem;
-    letter-spacing: 2px;
-    margin-bottom: -30px;
-    font-weight: 500;
-    text-shadow: 0 0 0px black;
-    transform: translateY(1px);
-    transform: rotateX(37deg);
-    transform: rotateZ(18deg);
-    translate: 6px 1px;
-    z-index: 3;
-    position: relative;
+    font-size: 2.5rem;
+  letter-spacing: 2px;
+  margin-bottom: -30px;
+  font-weight: 500;
+  text-shadow: 0 0 0px black;
+  transform: translateY(1px);
+  transform: rotateX(37deg);
+  transform: rotateZ(18deg);
+  translate: 6px 1px;
+  z-index: 3;
+  position: relative;
 } 
 .body-line {
-    /* Mantén tus estilos existentes */
-    font-size: 4rem;
-    transform: rotateX(40deg);    
-    z-index: 1;
-    margin-top: -3px;    
-    color: transparent;
-  transition: all .2s ease;
+  /* Mantén tus estilos existentes */
+  font-size: 4rem;
+  transform: rotateX(40deg);    
+  z-index: 1;
+  margin-top: -3px;    
+  color: transparent;
+transition: all .2s ease;
 }
 .body-line:before {
-    content: 'Δ'; /* El carácter deseado */
-    position: absolute;  
-    top: 0%;
-    left: 0%; /* Coloca la letra a la derecha de la original */
-    color: #63f6fc; /* Color del borde */ 
-  z-index:-1;
-  translate: 5px -2px;
-  
- 
+  content: 'Δ'; /* El carácter deseado */
+  position: absolute;  
+  top: 0%;
+  left: 0%; /* Coloca la letra a la derecha de la original */
+  color: #63f6fc; /* Color del borde */ 
+z-index:-1;
+translate: 5px -2px;
+
+
 }
 
 .ear-left{ transform-origin: center; transform: rotate(346deg); transition: transform 0.2s; z-index: 1; translate: 11px -4px
@@ -52,14 +50,14 @@
 /* .ear-left:hover{ transform: rotate(355deg); } .ear-right:hover { transform: rotate(0deg);
 } */ 
 .cat:hover .body-line::before {
-  
+
 }
 .cat:hover .ear-left { transform: rotate(330deg); margin-left:0px; margin-bottom: 0px; translate: 0px -0.5px
 } .cat:hover .ear-right { transform: rotate(28deg); translate: 0px 0px;
 }
 .cat { font-size: 3rem; text-align: center; transition: transform 0.2s;
 } .cat:hover .face-line { transform: rotateX(6deg); /* Ajusta el ángulo de inclinación que desees */ 
-  translate: 1.5px -1px;
+translate: 1.5px -1px;
 }
 .title { font-size: 2rem; font-weight: 600; text-align: center; margin:-10px; margin-top: -50px; }
 
@@ -68,22 +66,105 @@
 .second-color{ color: #9fc37f; color: #00cd7a; color: black;
 }
 .third-color{ color: silver; color: #636363; color: orange; color: aqua; color: #00aeff;
-  
+
 }
 
-    </style>
-</head>
-<body class='primary-color'>
-    <div class="cat">
-        <div class="ear-line">
-            <div class="ear-left">^</div>
-            <div class="ear-right">^</div>
-        </div>
-        <div class="face-line"><></div>
-          
-        <div class="body-line third-color second-color">Δ</div>                  
+  </style>
+<style type="text/css" id="operaUserStyle">
+    video {
+      filter: -opera-shader(url(data:text/plain;base64,dW5pZm9ybSBzaGFkZXIgaUNodW5rOwp1bmlmb3JtIGZsb2F0MiBpQ2h1bmtTaXplOwoKY29uc3QgZmxvYXQgVEhSRVNIT0xEX0FSRUEgPSA4MDAgKiA2MDA7CmNvbnN0IGZsb2F0IE1JTl9BUkVBID0gNDAwICogMTAwOwpjb25zdCBmbG9hdCBNSU5fU1RSSVAgPSAyMDsKY29uc3QgZmxvYXQgTUFSR0lOID0gMTsKCmhhbGYzIHBpeGVsKGNvbnN0IGludCB4LCBjb25zdCBpbnQgeSwgaW4gaGFsZjIgeHkpCnsKCXJldHVybiBpQ2h1bmsuZXZhbCh4eSArIGhhbGYyKHgsIHkpKS5yZ2I7Cn0gIAoKaGFsZjMgUkdYKGhhbGYyIHh5KXsKCWhhbGYzIGYgPQoJcGl4ZWwoLTEsLTEsIHh5KSAqICAxLiArICAgICAgICAgICAgICAgICAgICAgCglwaXhlbCggMCwtMSwgeHkpICogLTEuICsgICAgICAgICAgICAgICAgICAgIAoJcGl4ZWwoIDEsLTEsIHh5KSAqICAxLiArCgkKCXBpeGVsKC0xLCAwLCB4eSkgKiAtMS4gKyAgICAgICAgICAgICAgICAgICAgCglwaXhlbCggMCwgMCwgeHkpICogLTIuICsgICAgICAgICAgICAgICAgICAgICAKCXBpeGVsKCAxLCAwLCB4eSkgKiAtMS4gKyAgICAgICAgICAgICAgICAgICAgIAoJCglwaXhlbCgtMSwgMSwgeHkpICogIDEuICsgICAgICAgICAgICAgICAgICAgICAKCXBpeGVsKCAwLCAxLCB4eSkgKiAtMS4gKyAgICAgICAgICAgICAgICAgICAgIAoJcGl4ZWwoIDEsIDEsIHh5KSAqICAxLgoJOwoJcmV0dXJuIGYgLyAtMjsKfQoKaGFsZjMgUkdYTW9yZShoYWxmMiB4eSl7CgloYWxmMyBmID0KCXBpeGVsKC0xLC0xLCB4eSkgKiAgMS4gKyAgICAgICAgICAgICAgICAgICAgIAoJcGl4ZWwoIDAsLTEsIHh5KSAqIC0xLiArICAgICAgICAgICAgICAgICAgICAKCXBpeGVsKCAxLC0xLCB4eSkgKiAgMS4gKwoJCglwaXhlbCgtMSwgMCwgeHkpICogLTEuICsgICAgICAgICAgICAgICAgICAgIAoJcGl4ZWwoIDAsIDAsIHh5KSAqIC0xLiArICAgICAgICAgICAgICAgICAgICAgCglwaXhlbCggMSwgMCwgeHkpICogLTEuICsgICAgICAgICAgICAgICAgICAgICAKCQoJcGl4ZWwoLTEsIDEsIHh5KSAqICAxLiArICAgICAgICAgICAgICAgICAgICAgCglwaXhlbCggMCwgMSwgeHkpICogLTEuICsgICAgICAgICAgICAgICAgICAgICAKCXBpeGVsKCAxLCAxLCB4eSkgKiAgMS4gCgk7CglyZXR1cm4gZiAvIC0xOwp9CgoKaGFsZjQgbWFpbihmbG9hdDIgeHkpCnsKCWhhbGY0IGNvbG9yID0gaUNodW5rLmV2YWwoeHkpOwoJCglpZiAoY29sb3IuYSA8IDEpIHsKCQlyZXR1cm4gY29sb3I7Cgl9CgkKCWlmIChpQ2h1bmtTaXplLnggKiBpQ2h1bmtTaXplLnkgPCBNSU5fQVJFQSkgewoJCXJldHVybiBjb2xvcjsKCX0KCglpZiAoaUNodW5rU2l6ZS55IDwgTUlOX1NUUklQIHx8IGlDaHVua1NpemUueCA8IE1JTl9TVFJJUCkgewoJCXJldHVybiBjb2xvcjsKCX0KCglpZiAoeHkueCA8IE1BUkdJTiB8fCB4eS54ID4gKGlDaHVua1NpemUueCAtIE1BUkdJTikgfHwKCSAgICB4eS55IDwgTUFSR0lOIHx8IHh5LnkgPiAoaUNodW5rU2l6ZS55IC0gTUFSR0lOKSkgewogICAgCXJldHVybiBjb2xvcjsgICAgCiAgICB9CgkKCWlmIChpQ2h1bmtTaXplLnggKiBpQ2h1bmtTaXplLnkgPiBUSFJFU0hPTERfQVJFQSkgewoJCWNvbG9yID0gaGFsZjQoUkdYTW9yZSh4eSksIDEpOwoJfSBlbHNlIHsKCQljb2xvciA9IGhhbGY0KFJHWCh4eSksIDEpOwoJfQoKCXJldHVybiBjb2xvcjsKfQo=));
+    }
+  </style></head>
+<body class="primary-color">
+  <div class="cat">
+      <div class="ear-line">
+          <div class="ear-left">^</div>
+          <div class="ear-right">^</div>
+      </div>
+      <div class="face-line">&lt;&gt;</div>
         
-    </div>
-    <h1 class="title primary-color">C __ D</h1>
-</body>
-</html>
+      <div class="body-line third-color second-color">Δ</div>                  
+      
+  </div>
+  <h1 class="title primary-color" style="
+  color: #636363;
+">C __ D</h1>
+<!-- Code injected by live-server -->
+<script>
+// <![CDATA[  <-- For SVG support
+if ('WebSocket' in window) {
+  (function () {
+    function refreshCSS() {
+      var sheets = [].slice.call(document.getElementsByTagName("link"));
+      var head = document.getElementsByTagName("head")[0];
+      for (var i = 0; i < sheets.length; ++i) {
+        var elem = sheets[i];
+        var parent = elem.parentElement || head;
+        parent.removeChild(elem);
+        var rel = elem.rel;
+        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+          var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+          elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+        }
+        parent.appendChild(elem);
+      }
+    }
+    var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+    var address = protocol + window.location.host + window.location.pathname + '/ws';
+    var socket = new WebSocket(address);
+    socket.onmessage = function (msg) {
+      if (msg.data == 'reload') window.location.reload();
+      else if (msg.data == 'refreshcss') refreshCSS();
+    };
+    if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+      console.log('Live reload enabled.');
+      sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+    }
+  })();
+}
+else {
+  console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+}
+// ]]>
+</script>
+
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body></html>
